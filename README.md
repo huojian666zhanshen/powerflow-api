@@ -3,10 +3,12 @@
 **PowerFlow API** 是一个基于 FastAPI 的电网潮流计算工具，支持 DC 和 AC 潮流分析，适用于配电网调度与优化。该工具提供标准化的 API 接口，能够快速执行电网的潮流计算并返回各节点和支路的功率、电压信息，支持与智能决策系统（如 GridGPT）集成。
 
 ## 功能概述
+
 - **DC潮流**：简化的直流潮流计算，适用于大规模电网分析。
 - **AC潮流**：基于 PYPOWER 的交流潮流计算，能够处理更复杂的电力系统网络。
 
 ## 主要功能
+
 - 计算电网的潮流，输出包括电压、电流、功率流等信息。
 - 提供 `/run_pf` API 接口，支持用户提交电网数据，并返回潮流计算结果。
 - 提供 `/health` 路由来检查 API 的健康状态。
@@ -14,9 +16,11 @@
 ## API接口
 
 ### 1. **POST /run_pf**
+
 执行潮流计算，支持指定电网数据和计算方法（DC 或 AC）。
 
-#### 请求体格式：
+### 请求体格式：
+
 ```json
 {
   "case": {
@@ -70,7 +74,10 @@ method: 选择计算方法，dc 是直流潮流计算，ac 是交流潮流计算
 
 options: 可选的配置参数，例如最大迭代次数 max_iter 和容忍度 tolerance。
 
+```
+
 ### 响应体格式：
+
 ```json
 {
   "converged": true,             // 是否计算收敛（bool类型）
@@ -117,23 +124,25 @@ idx: 支路的索引。
 
 Pft_pu: 支路功率流，单位为 pu（标幺）。
 
-安装与运行
-克隆仓库：
+```
 
-git clone https://github.com/yourusername/powerflow-api.git
-安装依赖：
+## 安装与运行
 
+- 1. 克隆仓库：
+git clone <https://github.com/yourusername/powerflow-api.git>
+- 2. 安装依赖：
 pip install -r requirements.txt
-启动 FastAPI 服务：
-
+- 3. 启动 FastAPI 服务：
 uvicorn main:app --reload
-访问 API：
-服务启动后，您可以访问 http://gridgpt.dev 来使用 API。
+- 4. 访问 API：
+服务启动后，您可以访问 <http://gridgpt.dev> 来使用 API。
 
-许可证
+## 许可证
+
 本项目使用 MIT 许可证，详情请见 LICENSE 文件。
 
-贡献
+## 贡献
+
 欢迎贡献！请按照以下步骤进行：
 
 Fork 本仓库。
@@ -142,4 +151,4 @@ Fork 本仓库。
 
 创建一个 Pull Request。
 
-感谢您使用 PowerFlow API！
+# 感谢您使用 PowerFlow API！
