@@ -1,4 +1,3 @@
-
 # PowerFlow API
 
 **PowerFlow API** 是一个基于 FastAPI 的电网潮流计算工具，支持 DC 和 AC 潮流分析，适用于配电网调度与优化。该工具提供标准化的 API 接口，能够快速执行电网的潮流计算并返回各节点和支路的功率、电压信息，支持与智能决策系统（如 GridGPT）集成。
@@ -17,10 +16,8 @@
 ### 1. **POST /run_pf**
 执行潮流计算，支持指定电网数据和计算方法（DC 或 AC）。
 
-请求体格式（POST /run_pf）
-
-请求体应该包含电网的基本信息以及计算的方式和参数，以下是更详细的解释：
-
+#### 请求体格式：
+```json
 {
   "case": {
     "case_id": "case30",          // 电网案例ID（可选，支持 'case30', 'case14' 等）
@@ -58,9 +55,7 @@
     "tolerance": 1e-6            // 计算容忍度
   }
 }
-
 说明：
-
 case: 电网的基本数据。
 
 case_id: 可以选择预定义的电网案例，如 case30 或 case14。如果没有指定，您需要提供完整的电网数据。
@@ -75,10 +70,7 @@ method: 选择计算方法，dc 是直流潮流计算，ac 是交流潮流计算
 
 options: 可选的配置参数，例如最大迭代次数 max_iter 和容忍度 tolerance。
 
-响应体格式（POST /run_pf）
-
-当 API 接收到请求并成功处理时，返回的响应体将包含计算结果：
-
+响应体格式：
 {
   "converged": true,             // 是否计算收敛（bool类型）
   "method": "dc",                // 使用的潮流计算方法
@@ -105,9 +97,7 @@ options: 可选的配置参数，例如最大迭代次数 max_iter 和容忍度 
     }
   ]
 }
-
 说明：
-
 converged: 计算是否收敛，true 表示成功收敛，false 表示计算未收敛。
 
 method: 返回使用的计算方法（dc 或 ac）。
@@ -126,63 +116,26 @@ idx: 支路的索引。
 
 Pft_pu: 支路功率流，单位为 pu（标幺）。
 
-总结：
-
-请求体：包括电网的基本数据、选择的计算方法以及可选的参数（如迭代次数和容忍度）。
-
-响应体：包含每个节点和支路的计算结果，如电压相位角、功率注入、功率流等信息。
-
-### 2. **GET /health**
-
-检查服务是否正常运行。
-
-#### 响应格式：
-
-```json
-{
-  "ok": true
-}
-```
-
-## 安装与运行
-
-### 1. 克隆仓库：
-
-```bash
+安装与运行
+1. 克隆仓库：
 git clone https://github.com/yourusername/powerflow-api.git
-```
-
-### 2. 安装依赖：
-
-```bash
+2. 安装依赖：
 pip install -r requirements.txt
-```
-
-### 3. 启动 FastAPI 服务：
-
-```bash
+3. 启动 FastAPI 服务：
 uvicorn main:app --reload
-```
+4. 访问 API：
+服务启动后，您可以访问 http://gridgpt.dev 来使用 API。
 
-### 4. 访问 API：
+许可证
+本项目使用 MIT 许可证，详情请见 LICENSE 文件。
 
-服务启动后，您可以访问 `http://127.0.0.1:8000` 来使用 API。
-
-## 许可证
-
-本项目使用 [MIT 许可证](LICENSE)，详情请见 `LICENSE` 文件。
-
-## 贡献
-
+贡献
 欢迎贡献！请按照以下步骤进行：
 
-1. Fork 本仓库。
-2. 提交您的更改。
-3. 创建一个 Pull Request。
+Fork 本仓库。
 
----
+提交您的更改。
+
+创建一个 Pull Request。
 
 感谢您使用 PowerFlow API！
-
-```
-```
