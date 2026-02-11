@@ -1,6 +1,7 @@
+
 # PowerFlow API
 
-**PowerFlow API** 是一个基于 FastAPI 的电网潮流计算工具，支持 DC 和 AC 潮流分析，适用于配电网调度与优化。该工具提供标准化的 API 接口，能够快速执行电网的潮流计算并返回各节点和支路的功率、电压信息，支持与智能决策系统集成。
+**PowerFlow API** 是一个基于 FastAPI 的电网潮流计算工具，支持 DC 和 AC 潮流分析，适用于配电网调度与优化。该工具提供标准化的 API 接口，能够快速执行电网的潮流计算并返回各节点和支路的功率、电压信息，支持与智能决策系统（如 GridGPT）集成。
 
 ## 功能概述
 - **DC潮流**：简化的直流潮流计算，适用于大规模电网分析。
@@ -28,50 +29,70 @@
   "method": "dc",
   "options": { ... }
 }
+````
+
 #### 响应体格式：
+
+```json
 {
   "converged": true,
   "method": "dc",
   "bus": [ ... ],
   "branch": [ ... ]
 }
+```
 
-###2. GET /health
+### 2. **GET /health**
 
 检查服务是否正常运行。
 
-响应格式：
+#### 响应格式：
+
+```json
 {
   "ok": true
 }
+```
 
-安装与运行
-1. 克隆仓库：
+## 安装与运行
+
+### 1. 克隆仓库：
+
+```bash
 git clone https://github.com/yourusername/powerflow-api.git
+```
 
-2. 安装依赖：
+### 2. 安装依赖：
+
+```bash
 pip install -r requirements.txt
+```
 
-3. 启动 FastAPI 服务：
+### 3. 启动 FastAPI 服务：
+
+```bash
 uvicorn main:app --reload
+```
 
-4. 访问 API：
+### 4. 访问 API：
 
-服务启动后，您可以访问 http://127.0.0.1:8000 来使用 API。
+服务启动后，您可以访问 `http://127.0.0.1:8000` 来使用 API。
 
-许可证
+## 许可证
 
-本项目使用 MIT 许可证
-，详情请见 LICENSE 文件。
+本项目使用 [MIT 许可证](LICENSE)，详情请见 `LICENSE` 文件。
 
-贡献
+## 贡献
 
 欢迎贡献！请按照以下步骤进行：
 
-Fork 本仓库。
+1. Fork 本仓库。
+2. 提交您的更改。
+3. 创建一个 Pull Request。
 
-提交您的更改。
-
-创建一个 Pull Request。
+---
 
 感谢您使用 PowerFlow API！
+
+```
+```
