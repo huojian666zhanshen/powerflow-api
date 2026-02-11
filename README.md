@@ -71,6 +71,7 @@ method: 选择计算方法，dc 是直流潮流计算，ac 是交流潮流计算
 options: 可选的配置参数，例如最大迭代次数 max_iter 和容忍度 tolerance。
 
 ### 响应体格式：
+```json
 {
   "converged": true,             // 是否计算收敛（bool类型）
   "method": "dc",                // 使用的潮流计算方法
@@ -116,7 +117,7 @@ idx: 支路的索引。
 
 Pft_pu: 支路功率流，单位为 pu（标幺）。
 
-##安装与运行
+## 安装与运行
 1. 克隆仓库：
 git clone https://github.com/yourusername/powerflow-api.git
 2. 安装依赖：
