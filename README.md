@@ -70,7 +70,7 @@ method: 选择计算方法，dc 是直流潮流计算，ac 是交流潮流计算
 
 options: 可选的配置参数，例如最大迭代次数 max_iter 和容忍度 tolerance。
 
-响应体格式：
+### 响应体格式：
 {
   "converged": true,             // 是否计算收敛（bool类型）
   "method": "dc",                // 使用的潮流计算方法
@@ -116,7 +116,7 @@ idx: 支路的索引。
 
 Pft_pu: 支路功率流，单位为 pu（标幺）。
 
-安装与运行
+##安装与运行
 1. 克隆仓库：
 git clone https://github.com/yourusername/powerflow-api.git
 2. 安装依赖：
@@ -126,10 +126,10 @@ uvicorn main:app --reload
 4. 访问 API：
 服务启动后，您可以访问 http://gridgpt.dev 来使用 API。
 
-许可证
+##许可证
 本项目使用 MIT 许可证，详情请见 LICENSE 文件。
 
-贡献
+##贡献
 欢迎贡献！请按照以下步骤进行：
 
 Fork 本仓库。
