@@ -129,7 +129,7 @@ Pft_pu: 支路功率流，单位为 pu（标幺）。
 ## 安装与运行
 
 - 1. 克隆仓库：
-git clone <https://github.com/yourusername/powerflow-api.git>
+git clone <https://github.com/huojian666zhanshen/powerflow-api.git>
 - 2. 安装依赖：
 pip install -r requirements.txt
 - 3. 启动 FastAPI 服务：
