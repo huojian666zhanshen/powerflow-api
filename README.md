@@ -133,9 +133,9 @@ git clone <https://github.com/huojian666zhanshen/powerflow-api.git>
 - 2. 安装依赖：
 pip install -r requirements.txt
 - 3. 启动 FastAPI 服务：
-uvicorn main:app --reload
+uvicorn http_api:app --reload
 - 4. 访问 API：
-服务启动后，您可以访问 <http://gridgpt.dev> 来使用 API。
+您也可以直接访问 <http://pf.gridgpt.dev> 来使用 API。
 
 ## 许可证
 
