@@ -135,7 +135,7 @@ pip install -r requirements.txt
 - 3. 启动 FastAPI 服务：
 uvicorn http_api:app --reload
 - 4. 访问 API：
-您也可以直接访问 <http://pf.gridgpt.dev> 来使用 API。
+您也可以直接访问 <http://pf.gridgpt.dev/docs> 来使用 API。
 
 ## 许可证
 
